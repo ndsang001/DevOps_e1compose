@@ -1,0 +1,61 @@
+name: e1-compose
+
+services:
+  service1:
+    build: ./service1_nodejs
+    image: e1/service1:1.0
+    container_name: service1
+    ports:
+      - "8199:8199"   # Only public entrypoint
+    environment:
+      - STORAGE_URL=http://storage:8080
+      - SERVICE2_URL=http://service2:5000
+    volumes:
+      - vStorage:/app/vstorage
+    depends_on:
+      - service2
+      - storage
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:8199/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+    networks: [e1net]
+
+  service2:
+    build: ./service2_python
+    image: e1/service2:1.0
+    container_name: service2
+    environment:
+      - STORAGE_URL=http://storage:8080
+      - VSTORAGE_DIR=/app/vstorage
+    volumes:
+      - vStorage:/app/vstorage
+    networks: [e1net]
+
+  storage:
+    build: ./storage_python
+    image: e1/storage:1.0
+    container_name: storage
+    environment:
+      - DATA_DIR=/var/lib/storage
+    volumes:
+      - storage_data:/var/lib/storage
+    networks: [e1net]
+
+volumes:
+  # Named volume bound to a host path so it can be inspected easily.
+  # On macOS (current development environment), ${PWD} resolves to the current folder. If it fails, absolute paths can be used.
+  vStorage:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${PWD}/service1_nodejs/vstorage
+
+  # Pure named volume for the Storage service's internal persistence.
+  storage_data:
+
+networks:
+  e1net:
+    driver: bridge
