@@ -7,4 +7,4 @@ storage_python/venv*/
 
 # Runtime data created during tests
 service1_nodejs/vstorage/log.txt
-storage_python/data/log.txt
+!service1_nodejs/vstorage/.gitkeep
