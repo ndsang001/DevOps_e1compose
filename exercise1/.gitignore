@@ -4,7 +4,3 @@ service1_nodejs/node_modules/
 # Python virtualenvs
 service2_python/venv*/
 storage_python/venv*/
-
-# Runtime data created during tests
-service1_nodejs/vstorage/*
-!service1_nodejs/vstorage/.gitkeep
