@@ -1,0 +1,29 @@
+1. AI usage 
+- Name: ChatGPT, Copilot
+- Version: GPT-5, GPT-4
+
+2. Motivation for using AI
+I used AI tools to enhance my productivity and efficiency in completing the task. 
+The AI tools provided valuable assistance in generating ideas, solving problems, and suggesting improvements for my work.
+However, the AI should only be used as a supplementary resource rather than a primary source of information. 
+Furthermore, I ensured that I critically evaluated the AI-generated content and made necessary adjustments to align with my understanding and the task requirements.
+
+3. How AI was used
+In this project, I used AI tools to assist in 
+- Analysing the requirements and objectives of the task.
+- Researching relevant information and examples.
+- Learning new concepts and techniques in coding.
+- Bug fixing and code optimization.
+- Drafting sections of the report.
+- Providing suggestions for structuring the information and improving clarity of the report. 
+- Grammatical and stylistic revisions to enhance readability of my report.
+
+4. Reflection on AI usage
+Using AI tools improved my efficiency and productivity in completing the task.
+The AI tools provided valuable insights and suggestions that helped me overcome challenges and enhance the quality of my work.
+However, I also encountered some limitations and challenges while using AI tools.
+- The AI-generated content was not always accurate or relevant to the task requirements and my given context.
+- I had to spend additional time verifying and validating the information provided by the AI.
+- Some AI tools had limitations in understanding the context and nuances of the task, leading to generic or irrelevant suggestions.
+- For example, I faced a situation where I could not perform "docker compose down". However, AI could not help me solve this issue. I had to search for the solution on Stack Overflow and GitHub.
+Overall, I found AI tools to be a useful resource in my work, but I also recognized the importance of critical thinking and human judgment in evaluating and utilizing AI-generated content effectively.
