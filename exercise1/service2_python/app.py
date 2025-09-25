@@ -26,6 +26,7 @@ def uptime_hours():
     # Uptime in hours with two decimals
     return round((time.time() - START_TS) / 3600, 2)
 
+# Free disk space in MB for root filesystem
 def free_disk_mb():
     try:
         _, _, free = disk_usage('/')

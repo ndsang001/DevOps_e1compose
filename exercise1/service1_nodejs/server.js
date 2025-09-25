@@ -25,7 +25,6 @@ function getUptimeHours() {
 
 function getFreeDiskMB() {
     // Get free disk space in MB for the root filesystem
-    // Call POSIX 'df' to query root filesystem and parse output
     try {
         const out = execSync('df -k /', { encoding: 'utf-8' }).split('\n')[1].trim().split(/\s+/);
         const availableKB = parseInt(out[3], 10);
